@@ -2,8 +2,9 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- Logs to ~/.local/state/nvim/lsp.log
---vim.lsp.set_log_level("DEBUG")
+-- this file grows indefinitely and I only care about the current session
+os.remove(vim.env.HOME .. "/.local/state/nvim/lsp.log")
+vim.lsp.set_log_level("WARN") -- other options: "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "OFF"
 
 -- we format with Conform -- not with ruby-lsp or solargraph
 require("lazyvim.util").lsp.on_attach(function(client, _)
