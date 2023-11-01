@@ -6,10 +6,16 @@
 os.remove(vim.env.HOME .. "/.local/state/nvim/lsp.log")
 vim.lsp.set_log_level("WARN") -- other options: "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "OFF"
 
--- we format with Conform -- not with ruby-lsp or solargraph
+local utils = require("utils")
+
 require("lazyvim.util").lsp.on_attach(function(client, _)
   --print(vim.inspect(client))
   if client.name == "ruby_ls" or client.name == "solargraph" then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
+
+  if client.name == "syntax_tree" and not utils.project_has_syntax_tree_config() then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
   end

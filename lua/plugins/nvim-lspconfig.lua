@@ -1,10 +1,14 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    diagnostics = {
+      underline = false,
+    },
     servers = {
       ruby_ls = {
-        mason = false, -- I want to install it myself -- not with Mason
+        mason = false, -- ruby-lsp installs itself
       },
+      syntax_tree = {},
     },
   },
 }

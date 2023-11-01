@@ -36,21 +36,6 @@ return {
           return b.eslint_has_prettier
         end,
       },
-      stree = {
-        inherit = false,
-        command = "bundle",
-        args = { "exec", "stree", "format", "$FILENAME" },
-        condition = function(ctx)
-          local b = vim.b[vim.api.nvim_get_current_buf()]
-          if b.has_stree ~= nil then
-            return b.has_stree
-          end
-
-          local stree_path = vim.fs.find({ ".streerc" }, { path = ctx.filename, upward = true })[1]
-          b.has_stree = stree_path and true or false
-          return b.has_stree
-        end,
-      },
     },
   },
 }
