@@ -8,14 +8,15 @@ return {
       javascriptreact = { { "eslint_d", "prettier" } },
       typescript = { { "eslint_d", "prettier" } },
       typescriptreact = { { "eslint_d", "prettier" } },
-      ruby = { { "stree" } },
+      ruby = { "stree" },
     },
     formatters = {
       --injected = { options = { ignore_errors = true } },
       eslint_d = {
         condition = function(ctx)
           local eslint_has_prettier = false
-          local path = vim.fs.find({ ".eslintrc.json" }, { path = ctx.filename, upward = true })[1]
+          local path =
+            vim.fs.find({ ".eslintrc", ".eslintrc.js", ".eslintrc.json" }, { path = ctx.filename, upward = true })[1]
           if path then
             local file = io.open(path, "r")
             if file then
