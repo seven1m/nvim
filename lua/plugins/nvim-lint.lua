@@ -4,7 +4,7 @@ return {
     -- Event to trigger linters
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
     linters_by_ft = {
-      cpp = { "clangtidy" },
+      --cpp = { "clangtidy" },
       --ruby = { "rubocop" },
       -- Use the "*" filetype to run linters on all filetypes.
       -- ['*'] = { 'global linter' },
