@@ -8,7 +8,6 @@ return {
       javascriptreact = { { "eslint_d", "prettier" } },
       typescript = { { "eslint_d", "prettier" } },
       typescriptreact = { { "eslint_d", "prettier" } },
-      ruby = { "stree" },
     },
     formatters = {
       --injected = { options = { ignore_errors = true } },
