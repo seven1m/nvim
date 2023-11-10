@@ -6,9 +6,13 @@ return {
     },
     servers = {
       ruby_ls = {
-        mason = false, -- ruby-lsp installs itself
+        -- NOTE TO SELF: If you get weird errors that don't go away when you save the file,
+        -- you probably need to add 'rubocop' to the gemfile of the project!
+        mason = false, -- I install myself please
       },
-      syntax_tree = {},
+      syntax_tree = {
+        mason = false, -- I install myself please
+      },
     },
   },
 }
