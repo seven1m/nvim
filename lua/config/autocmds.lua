@@ -7,3 +7,4 @@ vim.cmd("autocmd FileType ruby setlocal indentkeys-=. indentkeys-=0{")
 
 -- https://vi.stackexchange.com/questions/6512/neovim-hides-the-chars-when-editing-markdown
 vim.cmd("autocmd FileType markdown set conceallevel=0")
+vim.cmd("autocmd FileType json set conceallevel=0")
