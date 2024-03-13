@@ -11,6 +11,10 @@ return {
     },
     formatters = {
       --injected = { options = { ignore_errors = true } },
+      --
+      -- NOTE: If this doesn't work, then be sure to install eslint_d:
+      --
+      --     npm install -g eslint_d
       eslint_d = {
         condition = function(ctx)
           local b = vim.b[vim.api.nvim_get_current_buf()]
@@ -25,7 +29,7 @@ return {
             local file = io.open(path, "r")
             if file then
               local content = file:read("*a") -- *a or *all reads the whole file
-              if string.find(content, "prettier/prettier") then
+              if string.find(content, "prettier/prettier") or string.find(content, "prettier/recommended") then
                 b.eslint_has_prettier = true
               end
               file:close()
