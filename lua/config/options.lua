@@ -10,7 +10,7 @@ local utils = require("utils")
 
 require("lazyvim.util").lsp.on_attach(function(client, _)
   --print(vim.inspect(client))
-  if client.name == "ruby_ls" or client.name == "solargraph" then
+  if client.name == "ruby_lsp" or client.name == "solargraph" then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
   end
