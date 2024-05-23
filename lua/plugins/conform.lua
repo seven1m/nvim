@@ -3,6 +3,7 @@ return {
   opts = {
     formatters_by_ft = {
       -- Use a sub-list to run only the first available formatter
+      bash = { "shfmt" },
       cpp = { "clang_format" },
       javascript = { { "eslint_d", "prettier" } },
       javascriptreact = { { "eslint_d", "prettier" } },
