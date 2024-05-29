@@ -12,14 +12,23 @@ return {
     --},
     servers = {
       ruby_lsp = {
-        -- NOTE TO SELF: If you get weird errors that don't go away when you save the file,
-        -- you probably need to add 'rubocop' to the gemfile of the project!
-        -- And if nothing works at all, try `gem install ruby-lsp` followed by `ruby-lsp` and Ctrl-C.
-        mason = false, -- I install myself please
-        cmd_env = { BUNDLE_GEMFILE = ".ruby-lsp/Gemfile" },
+        mason = false,
+        -- You need to install rubocop and ruby-lsp:
+        --
+        --     gem install ruby-lsp rubocop
+        --
+        --cmd_env = { BUNDLE_GEMFILE = ".ruby-lsp/Gemfile" },
+        init_options = {
+          formatter = "rubocop",
+          linters = { "rubocop" },
+        },
       },
       syntax_tree = {
-        mason = false, -- I install myself please
+        mason = false,
+        -- You need to install syntax_tree
+        --
+        --     gem install syntax_tree
+        --
       },
     },
   },
