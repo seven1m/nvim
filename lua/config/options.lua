@@ -14,9 +14,4 @@ require("lazyvim.util").lsp.on_attach(function(client, _)
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
   end
-
-  if client.name == "syntax_tree" and not utils.project_has_syntax_tree_config() then
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-  end
 end)
