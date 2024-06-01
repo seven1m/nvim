@@ -45,6 +45,7 @@ map("n", "<leader>jd", ":Telescope lsp_definitions<CR>", { desc = "List LSP defi
 map("n", "<leader>jf", ":Telescope find_files<CR>", { desc = "List files in project", remap = true })
 map("n", "<leader>jg", ":Telescope live_grep<CR>", { desc = "Search for strings in project", remap = true })
 map("n", "<leader>jr", ":Telescope lsp_references<CR>", { desc = "List LSP references in project", remap = true })
+map("n", "<leader>jr", ":Telescope lsp_references<CR>", { desc = "List LSP references in project", remap = true })
 map(
   "n",
   "<leader>js",
@@ -52,6 +53,7 @@ map(
   { desc = "Lists Function names and variables from Treesitter", remap = true }
 )
 map("n", "<leader>jt", ":Telescope tags<CR>", { desc = "List tags in project", remap = true })
+
 --map(
 --"n",
 --"<leader>jS",
@@ -69,6 +71,8 @@ map("n", "<leader>jt", ":Telescope tags<CR>", { desc = "List tags in project", r
 --map("n", "K", vim.lsp.buf.hover)
 --map("n", "H", vim.lsp.buf.implementation)
 --map("n", "S", vim.lsp.buf.signature_help)
+
+map("n", "<leader>clr", ":LspRestart<CR>", { desc = "Restart LSP", remap = true })
 
 -- I don't use Vim tabs
 unmap("n", "<leader><tab>l")
