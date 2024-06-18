@@ -13,6 +13,11 @@ require("lazyvim.util").lsp.on_attach(function(client, _)
   if client.name == "ruby_lsp" or client.name == "solargraph" then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
+  elseif client.name == "tsserver" then
+    if utils.project_has_old_typescript() then
+      print("This project has old typescript")
+      client.server_capabilities.inlayHintProvider = false
+    end
   end
 end)
 
