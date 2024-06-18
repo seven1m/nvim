@@ -141,7 +141,6 @@ map("n", "<Leader>av", function()
   vim.api.nvim_command("vsplit " .. alternateFile())
 end, { desc = "Open alternate file in vertical split", silent = true, noremap = true })
 
-map("n", "<Leader>cB", ":BlamerToggle<CR>", { desc = "Toggle inline Git blame", silent = true, noremap = true })
 map("v", "<Leader>cf", function()
   vim.lsp.buf.format({
     async = true,
