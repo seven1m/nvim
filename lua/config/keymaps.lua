@@ -150,3 +150,6 @@ map("v", "<Leader>cf", function()
     },
   })
 end, { desc = "Format selection", silent = true, noremap = true })
+
+-- escape insert mode in terminal using Ctrl-Esc
+map("t", "<C-Esc>", "<C-\\><C-n>")
