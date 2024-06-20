@@ -52,6 +52,9 @@ return {
         --     Cannot find provider for feature
         enabled = false,
       },
+      eslint = {
+        enabled = true,
+      },
     })
 
     return opts
