@@ -38,7 +38,7 @@ map("n", "<leader>wv", "<C-w>v", { desc = "Split this window vertically", remap 
 map("n", "<leader>wo", "<C-w>o", { desc = "Close all windows but this one", remap = true })
 map("n", "<leader>w=", "<C-w>=", { desc = "Resize all windows evenly", remap = true })
 
-wk.register({ ["<leader>j"] = { name = "+jump" } })
+wk.add({ "<leader>j", group = "jump" })
 map("n", "<leader>ja", ":lua vim.lsp.buf.code_action()<CR>", {})
 map("n", "<leader>jb", ":Telescope buffers<CR>", { desc = "List buffers in project", remap = true })
 map("n", "<leader>jd", ":Telescope lsp_definitions<CR>", { desc = "List LSP definitions in project", remap = true })
@@ -130,7 +130,7 @@ local function alternateFile()
   end
 end
 
-wk.register({ ["<leader>a"] = { name = "+alternate" } })
+wk.add({ "<leader>a", group = "alternate" })
 map("n", "<Leader>aa", function()
   vim.api.nvim_command("edit " .. alternateFile())
 end, { desc = "Open alternate file", silent = true, noremap = true })

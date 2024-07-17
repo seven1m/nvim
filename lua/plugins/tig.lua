@@ -2,7 +2,7 @@ return {
   "codeindulgence/vim-tig",
   init = function()
     local wk = require("which-key")
-    wk.register({ ["<leader>ct"] = { name = "+tig" } })
+    wk.add({ "<leader>ct", group = "tig" })
   end,
   keys = {
     {
