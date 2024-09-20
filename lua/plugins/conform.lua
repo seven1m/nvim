@@ -15,7 +15,7 @@ return {
       --
       -- NOTE: If this doesn't work, then be sure to install eslint_d:
       --
-      --     npm install -g eslint_d
+      --     npm install eslint_d
       eslint_d = {
         condition = function(ctx)
           local b = vim.b[vim.api.nvim_get_current_buf()]
