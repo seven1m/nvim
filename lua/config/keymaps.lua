@@ -40,37 +40,19 @@ map("n", "<leader>w=", "<C-w>=", { desc = "Resize all windows evenly", remap = t
 
 wk.add({ "<leader>j", group = "jump" })
 map("n", "<leader>ja", ":lua vim.lsp.buf.code_action()<CR>", {})
-map("n", "<leader>jb", ":Telescope buffers<CR>", { desc = "List buffers in project", remap = true })
-map("n", "<leader>jd", ":Telescope lsp_definitions<CR>", { desc = "List LSP definitions in project", remap = true })
-map("n", "<leader>jf", ":Telescope find_files<CR>", { desc = "List files in project", remap = true })
-map("n", "<leader>jg", ":Telescope live_grep<CR>", { desc = "Search for strings in project", remap = true })
-map("n", "<leader>jr", ":Telescope lsp_references<CR>", { desc = "List LSP references in project", remap = true })
-map("n", "<leader>jr", ":Telescope lsp_references<CR>", { desc = "List LSP references in project", remap = true })
+map("n", "<leader>jb", ":FzfLua buffers<CR>", { desc = "List buffers in project", remap = true })
+map("n", "<leader>jd", ":FzfLua lsp_definitions<CR>", { desc = "List LSP definitions in project", remap = true })
+map("n", "<leader>jf", ":FzfLua files<CR>", { desc = "List files in project", remap = true })
+map("n", "<leader>jg", ":FzfLua live_grep<CR>", { desc = "Search for strings in project", remap = true })
+map("n", "<leader>jr", ":FzfLua lsp_references<CR>", { desc = "List LSP references in project", remap = true })
+map("n", "<leader>jr", ":FzfLua lsp_references<CR>", { desc = "List LSP references in project", remap = true })
 map(
   "n",
   "<leader>js",
-  ":Telescope treesitter<CR>",
+  ":FzfLua treesitter<CR>",
   { desc = "Lists Function names and variables from Treesitter", remap = true }
 )
-map("n", "<leader>jt", ":Telescope tags<CR>", { desc = "List tags in project", remap = true })
-
---map(
---"n",
---"<leader>jS",
---":Telescope lsp_document_symbols<CR>",
---{ desc = "List all Treesitter symbols in project", remap = true }
---)
---map(
---"n",
---"<leader>jW",
---"<cmd>lua require'telescope.builtin'.lsp_workspace_symbols{}<cr>",
---":Telescope lsp_workspace_symbols{}<CR>",
---{ desc = "List all Treesitter symbols in project", remap = true }
---)
-
---map("n", "K", vim.lsp.buf.hover)
---map("n", "H", vim.lsp.buf.implementation)
---map("n", "S", vim.lsp.buf.signature_help)
+map("n", "<leader>jt", ":FzfLua tags<CR>", { desc = "List tags in project", remap = true })
 
 map("n", "<leader>clr", ":LspRestart<CR>", { desc = "Restart LSP", remap = true })
 
