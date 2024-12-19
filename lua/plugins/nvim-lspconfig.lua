@@ -23,7 +23,12 @@ return {
         --
         --     gem install ruby-lsp rubocop
         --
-        --cmd_env = { BUNDLE_GEMFILE = ".ruby-lsp/Gemfile" },
+        cmd_env = {
+          -- Neovim is overwriting GEM_HOME somehow.
+          -- Setting it back to the value set by Devbox,
+          -- which is also stored by Devbox in RUBY_CONFDIR.
+          GEM_HOME = vim.env.RUBY_CONFDIR,
+        },
         init_options = {
           formatter = "rubocop",
           linters = { "rubocop" },
@@ -31,6 +36,12 @@ return {
       },
       syntax_tree = {
         mason = false,
+        cmd_env = {
+          -- Neovim is overwriting GEM_HOME somehow.
+          -- Setting it back to the value set by Devbox,
+          -- which is also stored by Devbox in RUBY_CONFDIR.
+          GEM_HOME = vim.env.RUBY_CONFDIR,
+        },
         -- You need to install syntax_tree
         --
         --     gem install syntax_tree
