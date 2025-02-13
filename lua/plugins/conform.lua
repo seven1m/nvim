@@ -5,11 +5,12 @@ return {
       -- Use a sub-list to run only the first available formatter
       bash = { "shfmt" },
       cpp = { "clang_format" },
-      javascript = { { "eslint_d", "prettier" } },
-      javascriptreact = { { "eslint_d", "prettier" } },
-      typescript = { { "eslint_d", "prettier" } },
-      typescriptreact = { { "eslint_d", "prettier" } },
+      javascript = { "eslint_d", "prettier" },
+      javascriptreact = { "eslint_d", "prettier" },
+      typescript = { "eslint_d", "prettier" },
+      typescriptreact = { "eslint_d", "prettier" },
     },
+    stop_after_first = true,
     formatters = {
       --injected = { options = { ignore_errors = true } },
       --
