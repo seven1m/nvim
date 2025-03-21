@@ -1,12 +1,14 @@
 return {
   "stevearc/conform.nvim",
   opts = {
+    -- log_level = vim.log.levels.DEBUG,
     formatters_by_ft = {
       -- Use a sub-list to run only the first available formatter
       bash = { "shfmt" },
       cpp = { "clang_format" },
       javascript = { "eslint_d", "prettier" },
       javascriptreact = { "eslint_d", "prettier" },
+      ruby = { "syntax_tree", lsp_format = "never" },
       typescript = { "eslint_d", "prettier" },
       typescriptreact = { "eslint_d", "prettier" },
     },
@@ -18,7 +20,7 @@ return {
       --
       --     npm install eslint_d
       eslint_d = {
-        condition = function(ctx)
+        condition = function(_, ctx)
           local b = vim.b[vim.api.nvim_get_current_buf()]
           if b.eslint_has_prettier ~= nil then
             return b.eslint_has_prettier
@@ -41,6 +43,18 @@ return {
           return b.eslint_has_prettier
         end,
       },
+      syntax_tree = {
+        tmpfile_format = "$FILENAME.conform.tmp",
+        args = { "write", "$RELATIVE_FILEPATH" },
+        condition = function(_, ctx)
+          local path = vim.fs.find({ ".streerc" }, { path = ctx.filename, upward = true })[1]
+          if path then
+            return true
+          else
+            return false
+          end
+        end
+      }
     },
   },
 }
