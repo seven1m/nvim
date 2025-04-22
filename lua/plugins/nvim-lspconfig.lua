@@ -48,6 +48,9 @@ return {
         --
       },
       tsserver = {
+        cmd_env = {
+          PATH = "node_modules/.bin:" .. vim.env.PATH,
+        },
         settings = {
           typescript = {
             inlayHints = inlay_hints_settings,
@@ -56,6 +59,9 @@ return {
             inlayHints = inlay_hints_settings,
           },
         },
+        -- You need to install typescript-language-server
+        --
+        --     npm i typescript-language-server
       },
       vtsls = {
         -- This is buggy on my machine. Keeps saying:
