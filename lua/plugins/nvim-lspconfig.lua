@@ -14,7 +14,10 @@ return {
       includeInlayVariableTypeHintsWhenTypeMatchesName = false,
     }
 
-    -- opts.inlay_hints.enabled = false
+    opts.inlay_hints = {
+      enabled = true,
+      exclude = { "ruby" },
+    }
 
     opts.servers = vim.tbl_deep_extend("force", opts.servers, {
       ruby_lsp = {
@@ -29,6 +32,7 @@ return {
           -- which is also stored by Devbox in RUBY_CONFDIR.
           GEM_HOME = vim.env.RUBY_CONFDIR,
         },
+
         init_options = {
           formatter = "rubocop",
           linters = { "rubocop" },
