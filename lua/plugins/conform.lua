@@ -45,7 +45,11 @@ return {
       },
       syntax_tree = {
         tmpfile_format = "$FILENAME.conform.tmp",
+        command = "stree",
         args = { "write", "$RELATIVE_FILEPATH" },
+        env = {
+          GEM_HOME = vim.env.RUBY_CONFDIR, -- Devbox, stop screwing GEM_HOME plz
+        },
         condition = function(_, ctx)
           local path = vim.fs.find({ ".streerc" }, { path = ctx.filename, upward = true })[1]
           if path then
@@ -53,8 +57,8 @@ return {
           else
             return false
           end
-        end
-      }
+        end,
+      },
     },
   },
 }
