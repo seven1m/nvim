@@ -112,16 +112,16 @@ local function alternateFile()
   end
 end
 
-wk.add({ "<leader>a", group = "alternate" })
-map("n", "<Leader>aa", function()
-  vim.api.nvim_command("edit " .. alternateFile())
-end, { desc = "Open alternate file", silent = true, noremap = true })
-map("n", "<Leader>as", function()
-  vim.api.nvim_command("split " .. alternateFile())
-end, { desc = "Open alternate file in horizontal split", silent = true, noremap = true })
-map("n", "<Leader>av", function()
-  vim.api.nvim_command("vsplit " .. alternateFile())
-end, { desc = "Open alternate file in vertical split", silent = true, noremap = true })
+-- wk.add({ "<leader>a", group = "alternate" })
+-- map("n", "<Leader>aa", function()
+--   vim.api.nvim_command("edit " .. alternateFile())
+-- end, { desc = "Open alternate file", silent = true, noremap = true })
+-- map("n", "<Leader>as", function()
+--   vim.api.nvim_command("split " .. alternateFile())
+-- end, { desc = "Open alternate file in horizontal split", silent = true, noremap = true })
+-- map("n", "<Leader>av", function()
+--   vim.api.nvim_command("vsplit " .. alternateFile())
+-- end, { desc = "Open alternate file in vertical split", silent = true, noremap = true })
 
 map("v", "<Leader>cf", function()
   vim.lsp.buf.format({
