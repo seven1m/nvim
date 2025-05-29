@@ -51,6 +51,11 @@ return {
         --     gem install syntax_tree
         --
       },
+      solargraph = {
+        -- I hate solargraph. :-(
+        mason = false,
+        enabled = false,
+      },
       tsserver = {
         cmd_env = {
           PATH = "node_modules/.bin:" .. vim.env.PATH,
