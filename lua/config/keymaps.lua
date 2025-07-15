@@ -112,6 +112,8 @@ local function alternateFile()
   end
 end
 
+map("n", "<Leader>cc", ":ClaudeCode<CR>", { desc = "Toggle Claude Code" })
+
 -- wk.add({ "<leader>a", group = "alternate" })
 -- map("n", "<Leader>aa", function()
 --   vim.api.nvim_command("edit " .. alternateFile())
