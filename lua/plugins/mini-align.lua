@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.align",
+  "nvim-mini/mini.align",
   opts = {
     mappings = {
       start = "ga",
