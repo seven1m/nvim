@@ -17,6 +17,7 @@ end
 
 function M.project_has_old_typescript()
   local version = M.get_typescript_version()
+  -- print("typescript version is " .. version)
   if not version then
     return false
   end
